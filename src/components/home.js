@@ -15,7 +15,11 @@ function Home() {
               {
                  name : 'Metamask', 
                  imageSrc : '/wallets/metamask.png',
-               },  
+               },   
+               {
+                name : 'Crypto.com', 
+                imageSrc : '/wallets/cryptocom.jpg',
+              },  
                {
                  name : 'Phantom',
                  imageSrc : '/wallets/phantom.png',
@@ -23,7 +27,8 @@ function Home() {
                {
                 name : 'Coinbase', 
                 imageSrc : '/wallets/coinbase.png',
-              },   
+              },    
+
               {
                 name : 'Wallet connect', 
                 imageSrc : '/wclogo.png',      
@@ -182,8 +187,8 @@ function Home() {
                                 )   
                             }  
                        <div className='connectbtndiv'>  
-                       <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='connectbtn'>
-                      Back To Top
+                       <button onClick={()=>{setIsConnectComponentVisible(true)}} className='connectbtn'>
+                      Connect more
                       </button> 
                        </div> 
                        <br />  <br /> 

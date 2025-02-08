@@ -39,11 +39,16 @@ html {
 
  
 
- p, a, li, button, div {
+ p, a, li, button{
   font-family: "Poppins", serif; 
   font-style: normal; 
   cursor:pointer;
- }  
+ }   
+
+ div{
+  font-family: "Poppins", serif; 
+  font-style: normal;
+ }
 
  button:hover, i:hover, .awallet:hover{
    opacity:0.75748;
@@ -195,6 +200,7 @@ html {
   width: 100%; 
   max-width:600px;
   padding: 20px;
+  padding-bottom:20px;
   border-radius: 10px;
   top:80%;
   position:sticky;
@@ -202,7 +208,17 @@ html {
   background: white;
   margin: 50px auto;
   animation:enterbody 1 1s;
+}  
+
+.dm{
+    width:100%;
+   display:none;
 } 
+
+.dm{
+    width:50%;
+    height:auto;
+}
 
 @keyframes enterbody {
      from {

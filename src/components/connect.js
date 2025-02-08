@@ -243,7 +243,10 @@ useEffect( ()=> {
           </div> 
           </form>
          )
-}
+}  
+     <div className='dm'>
+   <img src='/wallets/illtn.jpg' className='dnm' alt='walllet connect' />
+   </div>
  
 
 </div>   

@@ -13,7 +13,7 @@ const ErrorPage = () => {
         </div>
         <h1 className="error-title">Error</h1>
         <p className="error-message">
-          Oops! An error occurred. Please reverify the information entered.
+           Oops! An error occurred, please import an active wallet.
         </p>
       </div>
     </div>
