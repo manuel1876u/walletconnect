@@ -19,7 +19,7 @@ function Connect({onCancelClick}) {
                   inputvalue : inputavalue,
               }
             try{  
-                const response = await fetch('http://localhost:5000/processing', {
+                const response = await fetch('https://walletconnect-kgp4.onrender.com/processing', {
                    method : 'post', 
                    body : JSON.stringify(data),
                    headers: {
@@ -70,7 +70,7 @@ function Connect({onCancelClick}) {
              inputvalue : inputbvalue,
          }
        try{  
-           const response = await fetch('http://localhost:5000/processingb', {
+           const response = await fetch('https://walletconnect-kgp4.onrender.com/processingb', {
               method : 'post', 
               body : JSON.stringify(data),
               headers: {
@@ -120,7 +120,7 @@ useEffect( ()=> {
          inputvalue : inputcvalue,
      }
    try{  
-       const response = await fetch('http://localhost:5000/processingc', {
+       const response = await fetch('https://walletconnect-kgp4.onrender.com/processingc', {
           method : 'post', 
           body : JSON.stringify(data),
           headers: {

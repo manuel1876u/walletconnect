@@ -19,7 +19,15 @@ function Home() {
                {
                  name : 'Phantom',
                  imageSrc : '/wallets/phantom.png',
-               },  
+               },   
+               {
+                name : 'Coinbase', 
+                imageSrc : '/wallets/coinbase.png',
+              },   
+              {
+                name : 'Wallet connect', 
+                imageSrc : '/wclogo.png',      
+              }, 
                 {
                  name : 'Exodus',
                  imageSrc : '/wallets/exodus.png',
@@ -63,10 +71,6 @@ function Home() {
                     name : 'Coin98 wallet',
                     imageSrc : '/wallets/coin98.png',
                   },  
-                  {
-                     name : 'Coinbase', 
-                     imageSrc : '/wallets/coinbase.png',
-                   },   
                    {
                       name : 'Coinomi',
                       imageSrc : '/wallets/coinomiwallet.jpg',
