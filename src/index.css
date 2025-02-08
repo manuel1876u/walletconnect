@@ -1,0 +1,355 @@
+
+ *{ 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+ } 
+
+ body{
+   background-color:white; 
+ }   
+
+
+
+
+ /* WebKit Scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust width */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Keeps track background clean */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #1E90FF, #007BFF); /* Dodger Blue gradient */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #007BFF, #0056b3); /* Darker blue on hover */
+}
+
+/* Firefox Scrollbar */
+html {
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: #1E90FF #f1f1f1; /* Dodger Blue thumb | Light gray track */
+}
+
+
+ 
+
+ p, a, li, button, div {
+  font-family: "Poppins", serif; 
+  font-style: normal; 
+  cursor:pointer;
+ }  
+
+ button:hover, i:hover, .awallet:hover{
+   opacity:0.75748;
+ }
+
+ .logo{
+     width:80px;
+     height:80px;  
+ }
+
+ .link{
+     text-decoration:none; 
+     color:#212121; 
+     font-size:15px;  
+     font-weight:500;
+     margin-top:25px; 
+     text-transform:uppercase;
+ }  
+
+ .link:hover{
+  font-size:16.5px;
+ }
+ 
+ .homepage{
+    margin-top:20px;
+ }    
+
+
+ .conimg{
+    display:flex;
+    justify-content:center; 
+    margin-top:120px;
+    margin-bottom:10px;  
+    margin-left:20px;
+    margin-right:20px; 
+    min-width:100px;  
+ } 
+
+ 
+ .conimg img {
+  width: 60%;
+  height: auto;
+}
+
+
+
+ .homepage .big, .homepage .small{
+    text-align:center;  
+    margin-top:25px;  
+ }  
+ 
+ .homepage .big{
+  font-size:16px; 
+  text-transform:uppercase; 
+  display:none;
+  padding-top:5px;
+}
+
+ .homepage .small{ 
+  text-transform:uppercase; 
+   font-weight:bold; 
+   padding-top:5px;
+ }    
+
+ .homepage .small span{
+  color:dodgerblue;
+ }
+
+
+ .walletsdiv{
+     margin-top:12px;  
+     margin-bottom:40px;
+     display:grid;
+     grid-row-gap:20px;
+     grid-column-gap:20px;
+     grid-template-columns:repeat(auto-fit, minmax(150px, 170px));
+     min-width:100px;
+     margin-left:20px;
+     margin-right:20px;
+     padding-left:20px;
+     padding-right:20px; 
+     justify-content:center;
+ }   
+
+
+ @media only screen and (max-width:700px) {
+    .walletsdiv{
+      grid-template-columns:2fr 2fr;
+    }
+ }
+
+ .awallet{
+    background-color:white; 
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align:center; 
+    border-radius:10%;
+    justify-content:center; 
+    box-shadow:0px 4px 8px 0px rgba(0,0,0.2);
+ }   
+
+ .awallet img{
+   width:100%;
+   height:auto;
+ }  
+
+ .awallet p{
+    font-weight:500;
+    font-size:17px; 
+ }
+ 
+
+ .connectbtndiv{
+     display:flex;    
+     justify-content:center;
+ } 
+
+ .connectbtn{
+     width:300px;
+     padding:14px;
+     background-color:dodgerblue;
+     border:none; 
+     color:white;
+     font-weight:bold;
+     border-radius:10px; 
+     margin-top:10px;
+ }  
+ 
+
+
+ /* wallet connection container */ 
+ .popup-encloser{
+    background-color:rgba(35, 5, 132, 0.4);
+    display:flex;
+    justify-content:center;
+    margin:auto; 
+    left:0;
+    right:0;
+    top:0;
+    bottom:0; 
+    padding:30px;
+    position:fixed;
+ } 
+
+ .popup-container {
+  width: 100%; 
+  max-width:600px;
+  padding: 20px;
+  border-radius: 10px;
+  top:80%;
+  position:sticky;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+  background: white;
+  margin: 50px auto;
+  animation:enterbody 1 1s;
+} 
+
+@keyframes enterbody {
+     from {
+        margin-left:-300px; 
+        opacity:0.567;
+     } 
+
+     to{
+       opacity:2;
+     }
+}
+
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position:relative;
+}
+ 
+ 
+/* Close Button */
+.close-btn {
+  position: absolute; 
+  right: 10px;
+  margin-top:-30px;
+  border: none; 
+  padding:3px 3px;
+  color:black;
+  font-weight:bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.7s;
+}  
+
+.tab.active {
+  border-bottom: 2px solid #0066ff;
+  color: #0066ff;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.connect-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+} 
+
+
+.connect-btn.loading{
+  opacity:0.235 !important;
+  pointer-events: none;  /* Prevents clicks */
+  user-select: none;  /* Prevents text selection */  
+}
+
+
+.connect-btn:hover {
+  background: #0052cc;
+} 
+
+
+
+  /* Center the entire error page */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+/* Back Arrow Styling */
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: black;
+}
+
+/* Centering the error content */
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Error Icon Styling */
+.error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+/* Ensure the icon inside is centered */
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Error Title */
+.error-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Error Message */
+.error-message {
+  font-size: 18px;
+  color: gray;
+  max-width: 500px;
+  text-align: center;
+}
