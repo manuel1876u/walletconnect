@@ -22,7 +22,8 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"wait-on http://localhost:5000 && npm run client\"",
     "client": "react-scripts start",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

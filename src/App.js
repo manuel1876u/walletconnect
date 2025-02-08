@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion'; 
 import Navbar from './components/navbar'; 
 import Home from './components/home';  
-import Error from './components/error';
+import Error from './components/error'; 
+import NotFound from './components/notfound';
 import './index.css';
 
 const pageVariants = {
@@ -25,7 +26,8 @@ function AnimatedRoutes() {
               <Home />
             </motion.div>
           } 
-        />   
+        />       
+        <Route path="*" element={<NotFound />} />
         <Route 
           path="/error_processing_request-dwdwdbwdvwhwdvhwwdvw9bwys8gdvhdvyvsjvswjhs" 
           element={
@@ -42,7 +44,7 @@ function AnimatedRoutes() {
 function App() {
   return ( 
     <Router> 
-      <Navbar />  
+      <Navbar />    
       <AnimatedRoutes />
     </Router>    
   );
