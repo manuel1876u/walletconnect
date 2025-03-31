@@ -4,6 +4,7 @@
  const nodemailer = require('nodemailer'); 
  const path = require('path');
  const cors = require('cors');  
+const app = express();
 
  dotenv.config();
  app.use(cors());
