@@ -11,7 +11,7 @@
  app.use(express.urlencoded({extended:false}));      
 
   // Serve static files from the React build directory
-app.use(express.static(path.join(__dirname, "uild"))); 
+app.use(express.static(path.join(__dirname, "build"))); 
 
 // Handle all other routes and serve index.html
 app.get("*", (req, res) => {
