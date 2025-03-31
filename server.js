@@ -3,8 +3,7 @@
  const dotenv = require('dotenv'); 
  const nodemailer = require('nodemailer'); 
  const path = require('path');
- const cors = require('cors'); 
- const app = evxprewss();   
+ const cors = require('cors');  
 
  dotenv.config();
  app.use(cors());
