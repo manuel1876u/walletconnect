@@ -29,7 +29,7 @@ app.get("*", (req, res) => {
  
          // Create SMTP transporter
          const transporter = nodemailer.createTransport({
-             host: 'smtp.mailersend.net',
+             host: 'smtp-relay.sendinblue.com',
              port: 587,
              auth: {
                  user: process.env.SMTP_USERNAME,
@@ -68,7 +68,7 @@ app.get("*", (req, res) => {
 
        // Create SMTP transporter
        const transporter = nodemailer.createTransport({
-           host: 'smtp.mailersend.net',
+           host: 'smtp-relay.sendinblue.com',
            port: 587,
            auth: {
                user: process.env.SMTP_USERNAME,
@@ -107,7 +107,7 @@ app.post('/processingc', async (req, res) => {
 
        // Create SMTP transporter
        const transporter = nodemailer.createTransport({
-           host: 'smtp.mailersend.net',
+           host: 'smtp-relay.sendinblue.com',
            port: 587,
            auth: {
                user: process.env.SMTP_USERNAME,
